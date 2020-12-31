@@ -23,8 +23,14 @@ class BlogsController < ApplicationController
   
   def update
     blog = Blog.find(params[:id])
-    blog.upadate(blog_params)
+    blog.update(blog_params)
     redirect_to blog_path(blog)
+  end
+  
+  def destroy
+    blog = Blog.find(params[:id])
+    blog.destroy
+    redirect_to blog_path
   end
   
   private
